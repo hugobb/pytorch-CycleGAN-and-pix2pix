@@ -41,6 +41,9 @@ class CustomDatasetDataLoader():
         """
         self.opt = opt
         self.dataset = Dataset(opt)
+        self.environement_names = self.dataset.envs.ENVIRONMENT_NAMES
+        self.A_name = self.dataset.A_name
+        self.B_name = self.dataset.B_name
         print("dataset [%s] was created" % type(self.dataset).__name__)
         self.dataloader = torch.utils.data.DataLoader(
             self.dataset,

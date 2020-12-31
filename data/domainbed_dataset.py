@@ -32,6 +32,9 @@ class Dataset(BaseDataset):
         else:
             raise NotImplementedError
 
+        self.A_name = self.envs.environments[opt.A]
+        self.B_name = self.envs.environments[opt.B]
+
         self.A_paths = sorted([s[0] for s in self.envs[opt.A].imgs])   # load images from '/path/to/data/trainA'
         self.B_paths = sorted([s[0] for s in self.envs[opt.B].imgs])    # load images from '/path/to/data/trainB'
         self.A_size = len(self.A_paths)  # get the size of dataset A
